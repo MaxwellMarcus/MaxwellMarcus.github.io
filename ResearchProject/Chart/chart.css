@@ -29,7 +29,14 @@ body {
 
 
 .header {
-  background-color: #2C3D55;
+  width: 100% - 40px;
+  margin: 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #333;
+  padding: 20px;
+  left: 0px;
+  margin-bottom: 20px;
 }
 
 .backButton {
@@ -77,36 +84,9 @@ body {
   color: #888;
 }
 
-.opener {
-
+.header {
+  background-color: #2C3D55;
 }
-
-.opened {
-  display: grid;
-  width: 100% - 40px;
-  margin: 0px;
-  grid-template-columns: 1fr 1fr;
-  /* background-color: #333; */
-  padding: 20px;
-  left: 0px;
-  margin-bottom: 20px;
-}
-
-/* .animation {
-  animation: 0.5s navigation ease-out;
-  width: 100%;
-}
-
-@keyframes navigation {
-  0% {
-    width: 0%;
-    display: grid;
-  }
-
-  100% {
-    width: 100%;
-  }
-} */
 
 body {
   background-color: #343434;
