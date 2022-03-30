@@ -1,0 +1,71 @@
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script> <!-- include jStat, from the CDN or otherwise -->
+  <link rel="stylesheet" href="datacollection.css">
+</head>
+<body>
+  <!-- <input type="text" name="" value="100" id="goal"> -->
+  <div class="header">
+    <button type="button" name="back" class="backButton" onClick="window.location=window.location.href.replace('datacollection', 'index')">←</button>
+    <div class="navigationContainer">
+      <div class="buttonContainer">
+        <button type="button" name="button" onClick="window.location=window.location.href.replace('datacollection', 'chart')" class="navigationButton">
+          Presentation
+        </button>
+      </div>
+      <div class="buttonContainer">
+        <button type="button" name="button" onClick="window.location=window.location.href.replace('datacollection', 'datacollection')" class="navigationButton">
+          Data Collection
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="helpContainer">
+    <h1 class="helpHeader">Mean </h1>
+    <p class="help">In a traditional experiment, the mean is the null value. That is, the value the experiment would result in if the hypothesis is incorrect. In an experiment that is intentionally producing misleading results, this is the actual value that a reliable experiment would resulte in.</p>
+    <h1 class="helpHeader">Standard Deviation </h1>
+    <p class="help">This is a value based on the variance of a dataset. In a traditional experiment this would be calculated based on the data that is collected, however, given that the data here is being randomly generated, the standard deviation needs to be entered so that the random generation is based on something. If this is larger, the statistically significant values will be closer to the mean.</p>
+    <h1 class="helpHeader">Population Size </h1>
+    <p class="help">This is the number of subjects that are generated in every trial. If this is larger, the statistically significant values will be closer to the mean. </p>
+    <h1 class="helpHeader">Trials </h1>
+    <p class="help">This is the number of trials that will be run. If this is larger, there will be a greater chance that one of the trials will be statistically significant.</p>
+    <h1 class="helpHeader">Statistical Significance</h1>
+    <p class="help">P-Value is the meassure of the likely hood that a result is not the null case (value if the hypothesis is not correct) being skewed by random chance. A statistically significant is usually considered to be a result that has a p-value of 5%. This means that there is a 5% chance that the true value is the null case.</p>
+  </div>
+
+  <div class="bigContainer">
+    <div class="topContainer">
+      <div id="inputGrid">
+        <div class="" onmouseover="document.getElementById('meanHelp').style.display='inherit'" onmouseout="document.getElementById('meanHelp').style.display='none'">
+          <span>Mean: </span>
+          <input type="text" name="" value="120" id="mean">
+        </div>
+        <div class="" onmouseover="document.getElementById('stdDevHelp').style.display='inherit'" onmouseout="document.getElementById('stdDevHelp').style.display='none'">
+          <span>Standard Deviation: </span>
+          <input type="text" name="" value="5" id="stdDev">
+        </div>
+        <div class="" onmouseover="document.getElementById('populationHelp').style.display='inherit'" onmouseout="document.getElementById('populationHelp').style.display='none'">
+          <span>Population Size: </span>
+          <input type="text" name="" value="20" id="population">
+        </div>
+        <div class="" onmouseover="document.getElementById('trialHelp').style.display='inherit'" onmouseout="document.getElementById('trialHelp').style.display='none'">
+          <span>Trials: </span>
+          <input type="text" name="" value="100" id="trials">
+        </div>
+        <button type="button" name="button" id="go">Start</button>
+      </div>
+      <canvas id="canvas" width="300" height="300"></canvas>
+    </div>
+
+    <table id="outputTable">
+      <tr>
+        <th>Trial</th>
+        <th>Value</th>
+        <th>P-Value</th>
+      </tr>
+
+    </table>
+  </div>
+
+  <script src="datacollection.js" charset="utf-8"></script>
+</body>
