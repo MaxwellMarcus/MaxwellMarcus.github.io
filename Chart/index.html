@@ -4,21 +4,20 @@
 </head>
 <body>
   <div class="header">
-    <div class="opened">
-      <button type="button" name="back" class="backButton" onClick="window.location=window.location.href.replace('chart', 'index')">←</button>
-      <div class="navigationContainer" id="navigation">
-        <div class="buttonContainer">
-          <button type="button" name="button" onClick="window.location=window.location.href.replace('chart', 'chart')" class="navigationButton">
-            Presentation
-          </button>
-        </div>
-        <div class="buttonContainer">
-          <button type="button" name="button" onClick="window.location=window.location.href.replace('chart', 'datacollection')" class="navigationButton">
-            Data Collection
-          </button>
-        </div>
+    <button type="button" name="back" class="backButton" onClick="window.location=window.location.origin">←</button>
+    <div class="navigationContainer">
+      <div class="buttonContainer">
+        <button type="button" name="button" onClick="window.location=window.location.href.origin + '/Chart/index.html'" class="navigationButton">
+          Presentation
+        </button>
+      </div>
+      <div class="buttonContainer">
+        <button type="button" name="button" onClick="window.location=window.location.origin + '/DataCollection/index.html'" class="navigationButton">
+          Data Collection
+        </button>
       </div>
     </div>
+  </div>
     <!-- <div class="opener">
       <button type="button" name="button" onClick="document.getElementById('navigation').classList.add('animation')">⊕</button>
     </div> -->
