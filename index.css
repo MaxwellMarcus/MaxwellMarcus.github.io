@@ -1,0 +1,44 @@
+.navigationContainer {
+  position: absolute;
+  width: 100%;
+  left: 0%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.buttonContainer {
+  width: 100%;
+  /* position: absolute; */
+}
+
+.navigationButton {
+  border: none;
+  position: relative;
+  height: 50px;
+  left: 25%;
+  width: 50%;
+  background-color: #585858;
+  font-weight: bolder;
+  font-size: 20px;
+  color: #333;
+  font-family: sans-serif;
+  color: #B3B3B3;
+}
+
+.navigationButton:hover{
+  background-color: #C9C9C9;
+}
+
+.title {
+  text-align: center;
+  padding: 5%;
+  margin: 5%;
+  font-size: 200%;
+  font-family: sans-serif;
+  color: #D3D3D3;
+  /* c: #343434; */
+}
+
+body {
+  background-color: #343434;
+}

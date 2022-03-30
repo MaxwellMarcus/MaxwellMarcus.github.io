@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="chart.css">
+</head>
+<body>
+  <div class="header">
+    <div class="opened">
+      <button type="button" name="back" class="backButton" onClick="window.location=window.location.href.replace('chart', 'index')">←</button>
+      <div class="navigationContainer" id="navigation">
+        <div class="buttonContainer">
+          <button type="button" name="button" onClick="window.location=window.location.href.replace('chart', 'chart')" class="navigationButton">
+            Presentation
+          </button>
+        </div>
+        <div class="buttonContainer">
+          <button type="button" name="button" onClick="window.location=window.location.href.replace('chart', 'datacollection')" class="navigationButton">
+            Data Collection
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="opener">
+      <button type="button" name="button" onClick="document.getElementById('navigation').classList.add('animation')">⊕</button>
+    </div> -->
+  </div>
+  <canvas id="canvas" width="300" height="300"></canvas>
+  <button type="button" name="button" id="addColumn" class="columnButton">Add Column</button>
+  <button type="button" name="button" id="removeColumn" class="columnButton">Remove Column</button>
+  <div display="grid" id="sliderDiv" class="inputContainer">
+    <div class="sliderBox">
+      <div>
+        Min Value:
+        <input type="range" name="Min Value" value="50" min="0", max="95" id="minSlider" class="Slider">
+      </div>
+      <div>
+        Chart Width:
+        <input type="range" name="Min Value" value="100" min="0", max="100" id="chartWidth" class="Slider">
+      </div>
+    </div>
+  </div>
+  <script src="chart.js"></script>
+</body>
+
+<!--
+<div class="sliderBox">
+  <span>Value 1: </span>
+   <input type="range" name="Max Value" value="50" min="0", max="95" id="maxSlider" class="Slider">
+  <input type="range" name="Value 1" value="100" min="0", max="100" id="value1Slider" class="Slider">
+</div>
+<div class="sliderBox">
+  <span>Value 2: </span>
+  <input type="range" name="Value 2" value="95" min="0", max="100" id="value2Slider" class="Slider">
+</div>
+<div class="sliderBox">
+  <span>Column 1 Width: </span>
+  <input type="range" name="Column 1 Width" value="50" min="0", max="150" id="column1WidthSlider" class="Slider">
+</div>
+<div class="sliderBox">
+  <span>Column 2 Width: </span>
+  <input type="range" name="Column 2 Width" value="50" min="0", max="150" id="column2WidthSlider" class="Slider">
+</div> -->
