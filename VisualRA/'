@@ -1,0 +1,78 @@
+const canvas = document.getElementById( "canvas" );
+const ctx = canvas.getContext( "2d" );
+
+function addAngleLine( a1, d1, a2, d2 ) {
+	x1 = Math.cos( a1 ) * d1;
+	y1 = Math.sin( a1 ) * d1;
+
+	x2 = Math.cos( a2 ) * d2;
+	y2 = Math.sin( a2 ) * d2;
+
+	x1 += x2;
+	y1 += y2;
+
+	angle = Math.atan2( x1, x2 );
+	dist = Math.sqrt( x1 * x1 + y1 * y1 );
+	return [ angle, dist ];
+}
+
+class Bird {
+	constructor() {
+		this.x = Math.random() * canvas.width;
+		this.y = Math.random() * canvas.height;
+		this.vangle = Math.random() * Math.PI * 2;
+		this.v = 10;
+		this.aangle = Math.random() * Math.PI * 2;
+		this.a = 10;
+
+		this.packVal = Math.random();
+	}
+
+	update() {
+		this.x += Math.cos( this.vangle ) * this.v / 100;
+		this.y += Math.sin( this.vangle ) * this.v / 100;
+
+		[ this.vangle, this.v ] = addAngleLine( this.vangle, this.v, this.aangle, this.a / 100 );
+
+		//let vx = Math.cos( this.vangle ) * this.v;
+		//let vy = Math.sin( this.vangle ) * this.v;
+
+		//let ax = Math.cos( this.aangle ) * this.a / 100;
+		//let ay = Math.sin( this.aangle ) * this.a / 100;	
+
+		//vx += ax;
+		//vy += ay;
+
+		//this.vangle = Math.atan2( vy, vx );
+		//this.v = Math.sqrt( vx * vx + vy * vy );
+	}
+
+	render() {
+		ctx.beginPath();
+		ctx.strokeWidth = 3;
+		ctx.moveTo( this.x, this.y );
+		ctx.lineTo( this.x + Math.cos( this.vangle ) * this.v, this.y + Math.sin( this.vangle ) * this.v );
+		ctx.stroke();
+	}
+}
+
+const b = new Bird();
+const o = new Bird();
+
+function loop() {
+	b.update();
+	o.update();
+
+	[ o.aangle, o.a ] = addAngleLine( o.aangle, o.a, Math.atan2( o.y - b.y, o.x - b.x ) )
+
+	ctx.clearRect( 0, 0, canvas.width, canvas.height );
+
+	b.render();
+	o.render();
+
+	console.log( b );
+
+	window.requestAnimationFrame( loop );
+}
+
+window.requestAnimationFrame( loop );
